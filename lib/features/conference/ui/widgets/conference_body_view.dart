@@ -27,7 +27,11 @@ class ConferenceBodyView extends StatelessWidget {
       'icon': Icons.healing,
       'route': Routes.spiritualPrescription,
     },
-    {'title': 'فكر معانا', 'icon': Icons.lightbulb},
+    {
+      'title': 'فكر معانا',
+      'icon': Icons.lightbulb,
+      'route': Routes.thinkWithUs,
+    },
     {'title': 'مطلوب للعمل بأجور مجزية', 'icon': Icons.work},
     {'title': 'صَوْتُ الرَّبِّ يُطفَيُ لُهُبَ نَارٍ', 'icon': Icons.flare},
     {'title': 'أقوال آباء', 'icon': Icons.book},
@@ -127,7 +131,6 @@ class ConferenceBodyView extends StatelessWidget {
     );
   }
 }
-        // '/spiritual_prescription': (context) => const Placeholder(), // استبدل بصفحة روشتة روحية
         // '/think_with_us': (context) => const Placeholder(), // استبدل بصفحة فكر معانا
         // '/job_opportunities': (context) => const Placeholder(), // استبدل بصفحة مطلوب للعمل
         // '/voice_of_lord': (context) => const Placeholder(), // استبدل بصفحة صوت الرب

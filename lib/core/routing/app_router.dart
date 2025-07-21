@@ -6,6 +6,7 @@ import 'package:upstream/features/conference/ui/widgets/saint_moses_view.dart';
 import 'package:upstream/features/conference/ui/widgets/spiritual_prescription_view.dart';
 import 'package:upstream/features/conference/ui/widgets/steps_view.dart';
 import 'package:upstream/features/conference/ui/widgets/success_quotes_view.dart';
+import 'package:upstream/features/conference/ui/widgets/think_with_us_view.dart';
 import 'package:upstream/features/home/ui/home_view.dart';
 import 'package:upstream/features/home/ui/widgets/conference_slogan_view.dart';
 
@@ -49,6 +50,10 @@ abstract class AppRouter {
         path: Routes.spiritualPrescription,
         pageBuilder: (context, state) =>
             fadeTransitionPage(SpiritualPrescriptionView()),
+      ),
+      GoRoute(
+        path: Routes.thinkWithUs,
+        pageBuilder: (context, state) => fadeTransitionPage(ThinkWithUsView()),
       ),
       // GoRoute(
       //   path: Routes.productDetails,
