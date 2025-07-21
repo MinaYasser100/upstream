@@ -14,7 +14,6 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('مؤتمر Upstream'),
         centerTitle: true,
-        backgroundColor: ColorsTheme().primaryColor,
         titleTextStyle: AppTextStyles.styleBold20sp(
           context,
         ).copyWith(color: ColorsTheme().whiteColor),

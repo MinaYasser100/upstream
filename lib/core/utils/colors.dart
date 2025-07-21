@@ -20,7 +20,7 @@ class ColorsTheme {
   final eventHighlightColor = const Color(0xFFE8F0FE); // خلفية مميزة للأحداث
 
   // ألوان جديدة للتصميم الفاخر
-  final gradientStart = const Color(0xFF4A90E2); // بداية التدرج
-  final gradientEnd = const Color(0xFFB3D4FC); // نهاية التدرج
+  final gradientStart = const Color(0xFF2E4374); // بداية التدرج
+  final gradientEnd = const Color(0xFF4A90E2); // نهاية التدرج
   final iconColor = const Color(0xFFFFA726); // لون الأيقونات
 }

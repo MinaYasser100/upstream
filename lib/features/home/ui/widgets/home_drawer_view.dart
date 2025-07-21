@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:upstream/core/routing/routes.dart';
 import 'package:upstream/core/theme/app_style.dart' show AppTextStyles;
 import 'package:upstream/core/utils/colors.dart';
 import 'package:upstream/features/home/ui/func/build_drawer_item.dart';
@@ -64,21 +66,15 @@ class HomeDrawerView extends StatelessWidget {
               icon: Icons.schedule,
               title: 'جدول المؤتمر',
               onTap: () {
-                Navigator.pop(context);
-                ScaffoldMessenger.of(
-                  context,
-                ).showSnackBar(const SnackBar(content: Text('جدول المؤتمر')));
+                context.go(Routes.home);
               },
             ),
             buildDrawerItem(
               context,
-              icon: Icons.info,
-              title: 'عن المؤتمر',
+              icon: Icons.music_note,
+              title: 'شعار المؤتمر',
               onTap: () {
-                Navigator.pop(context);
-                ScaffoldMessenger.of(
-                  context,
-                ).showSnackBar(const SnackBar(content: Text('عن المؤتمر')));
+                context.push(Routes.conferenceSlogan);
               },
             ),
             buildDrawerItem(

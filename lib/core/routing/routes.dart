@@ -11,4 +11,5 @@ class Routes {
   }
 
   static const String home = '/home_view';
+  static const String conferenceSlogan = '/conference_slogan_view';
 }
