@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:upstream/core/routing/routes.dart';
+import 'package:upstream/features/book/ui/book_study_view.dart';
 import 'package:upstream/features/home/ui/home_view.dart';
 import 'package:upstream/features/home/ui/widgets/conference_slogan_view.dart';
 
@@ -17,6 +18,10 @@ abstract class AppRouter {
         path: Routes.conferenceSlogan,
         pageBuilder: (context, state) =>
             fadeTransitionPage(ConferenceSloganView()),
+      ),
+      GoRoute(
+        path: Routes.bookStudy,
+        pageBuilder: (context, state) => fadeTransitionPage(BookStudyView()),
       ),
       // GoRoute(
       //   path: Routes.productDetails,

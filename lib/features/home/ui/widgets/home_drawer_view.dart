@@ -80,12 +80,9 @@ class HomeDrawerView extends StatelessWidget {
             buildDrawerItem(
               context,
               icon: Icons.contact_mail,
-              title: 'تواصل معنا',
+              title: "دراسة كتاب",
               onTap: () {
-                Navigator.pop(context);
-                ScaffoldMessenger.of(
-                  context,
-                ).showSnackBar(const SnackBar(content: Text('تواصل معنا')));
+                context.push(Routes.bookStudy);
               },
             ),
             buildDrawerItem(
