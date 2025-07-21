@@ -94,7 +94,7 @@ class HomeBodyView extends StatelessWidget {
                       ),
                       title: Text(
                         item['event']!,
-                        style: AppTextStyles.styleRegular14sp(
+                        style: AppTextStyles.styleBold18sp(
                           context,
                         ).copyWith(color: ColorsTheme().textColor),
                         textDirection: TextDirection.rtl,

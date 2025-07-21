@@ -43,6 +43,11 @@ class ConferenceBodyView extends StatelessWidget {
       'route': Routes.voiceOfLord,
     },
     {'title': 'أقوال آباء', 'icon': Icons.book, 'route': Routes.fathersSaying},
+    {
+      "title": 'ترانيم',
+      "icon": Icons.music_note_outlined,
+      "route": Routes.hymns,
+    },
   ];
 
   @override
@@ -112,7 +117,7 @@ class ConferenceBodyView extends StatelessWidget {
                                             AppTextStyles.styleBold20sp(
                                               context,
                                             ).copyWith(
-                                              color: ColorsTheme().primaryColor,
+                                              color: ColorsTheme().textColor,
                                             ),
                                         textAlign: TextAlign.right,
                                         textDirection: TextDirection.rtl,

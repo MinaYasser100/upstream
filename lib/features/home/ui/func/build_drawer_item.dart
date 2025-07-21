@@ -17,7 +17,7 @@ Widget buildDrawerItem(
       leading: Icon(icon, color: ColorsTheme().iconColor, size: 24.sp),
       title: Text(
         title,
-        style: AppTextStyles.styleRegular16sp(
+        style: AppTextStyles.styleRegular20sp(
           context,
         ).copyWith(color: ColorsTheme().whiteColor),
         textDirection: TextDirection.rtl,

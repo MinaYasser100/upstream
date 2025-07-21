@@ -38,7 +38,7 @@ class HomeDrawerView extends StatelessWidget {
                 children: [
                   Text(
                     'مؤتمر Upstream',
-                    style: AppTextStyles.styleBold24sp(context).copyWith(
+                    style: AppTextStyles.styleBold28sp(context).copyWith(
                       color: ColorsTheme().whiteColor,
                       shadows: [
                         Shadow(
@@ -53,7 +53,7 @@ class HomeDrawerView extends StatelessWidget {
                   SizedBox(height: 8),
                   Text(
                     'َضد التيار',
-                    style: AppTextStyles.styleRegular16sp(context).copyWith(
+                    style: AppTextStyles.styleRegular20sp(context).copyWith(
                       color: ColorsTheme().whiteColor.withValues(alpha: 0.8),
                     ),
                     textDirection: TextDirection.rtl,

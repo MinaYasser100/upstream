@@ -22,4 +22,6 @@ class Routes {
   static const String jobOpportunities = '/job_opportunities_view';
   static const String voiceOfLord = '/voice_of_lord_view';
   static const String fathersSaying = '/fathers_saying_view';
+  static const String hymns = '/hymns_view';
+  static const String hymn = '/hymn_view';
 }

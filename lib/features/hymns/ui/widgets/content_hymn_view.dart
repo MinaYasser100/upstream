@@ -6,8 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upstream/core/theme/app_style.dart';
 import 'package:upstream/core/utils/colors.dart';
 
-class ContentTextBodyView extends StatelessWidget {
-  const ContentTextBodyView({super.key, required this.text});
+class ContentHymnView extends StatelessWidget {
+  const ContentHymnView({super.key, required this.text});
   final String text;
   @override
   Widget build(BuildContext context) {
@@ -40,12 +40,12 @@ class ContentTextBodyView extends StatelessWidget {
                 ),
                 child: Text(
                   text,
-                  style: AppTextStyles.styleRegular18sp(context).copyWith(
+                  style: AppTextStyles.styleRegular20sp(context).copyWith(
                     color: ColorsTheme().primaryDark,
                     fontWeight: FontWeight.w600,
                     height: 1.7,
                   ),
-                  textAlign: TextAlign.right,
+                  textAlign: TextAlign.center,
                   textDirection: TextDirection.rtl,
                 ),
               ),

@@ -12,6 +12,9 @@ import 'package:upstream/features/conference/ui/widgets/think_with_us_view.dart'
 import 'package:upstream/features/conference/ui/widgets/voice_of_lord_view.dart';
 import 'package:upstream/features/home/ui/home_view.dart';
 import 'package:upstream/features/home/ui/widgets/conference_slogan_view.dart';
+import 'package:upstream/features/hymns/data/humn_model.dart';
+import 'package:upstream/features/hymns/ui/hymns_view.dart';
+import 'package:upstream/features/hymns/ui/widgets/hymn_view.dart';
 
 import 'animation_route.dart';
 
@@ -71,6 +74,18 @@ abstract class AppRouter {
         path: Routes.fathersSaying,
         pageBuilder: (context, state) =>
             fadeTransitionPage(FathersSayingsView()),
+      ),
+      GoRoute(
+        path: Routes.hymns,
+        pageBuilder: (context, state) => fadeTransitionPage(HymnsView()),
+      ),
+      GoRoute(
+        path: Routes.hymn,
+        pageBuilder: (context, state) {
+          final hymn = state.extra as HymnModel?;
+          if (hymn == null) throw Exception('Hymn not found');
+          return fadeTransitionPage(HymnView(hymn: hymn));
+        },
       ),
       // GoRoute(
       //   path: Routes.productDetails,
