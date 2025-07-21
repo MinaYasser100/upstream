@@ -4,6 +4,8 @@ import 'package:upstream/core/theme/app_style.dart';
 import 'package:upstream/core/utils/colors.dart';
 import 'package:upstream/features/home/data/appointment_data.dart';
 
+import 'home_title_view.dart';
+
 class HomeBodyView extends StatelessWidget {
   const HomeBodyView({super.key});
 
@@ -40,26 +42,7 @@ class HomeBodyView extends StatelessWidget {
       ),
       child: CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.all(20.w),
-              child: Text(
-                'جدول المؤتمر',
-                style: AppTextStyles.styleBold28sp(context).copyWith(
-                  color: ColorsTheme().whiteColor,
-                  shadows: [
-                    Shadow(
-                      color: ColorsTheme().primaryDark.withValues(alpha: 0.3),
-                      blurRadius: 4,
-                      offset: const Offset(2, 2),
-                    ),
-                  ],
-                ),
-                textAlign: TextAlign.center,
-                textDirection: TextDirection.rtl,
-              ),
-            ),
-          ),
+          HomeTitleView(),
           SliverList(
             delegate: SliverChildBuilderDelegate((context, index) {
               final item = schedule[index];
@@ -91,10 +74,13 @@ class HomeBodyView extends StatelessWidget {
                       leading: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(
-                            _getIconForEvent(item['event']!),
-                            color: ColorsTheme().iconColor,
-                            size: 24.sp,
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 3),
+                            child: Icon(
+                              _getIconForEvent(item['event']!),
+                              color: ColorsTheme().primaryColor,
+                              size: 24.sp,
+                            ),
                           ),
                           SizedBox(width: 8.w),
                           Text(
