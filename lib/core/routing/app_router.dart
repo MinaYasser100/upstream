@@ -1,14 +1,17 @@
 import 'package:go_router/go_router.dart';
 import 'package:upstream/core/routing/routes.dart';
+import 'package:upstream/features/home/ui/home_view.dart';
+
+import 'animation_route.dart';
 
 abstract class AppRouter {
   static final router = GoRouter(
     initialLocation: Routes.home,
     routes: [
-      // GoRoute(
-      //   path: Routes.productList,
-      //   pageBuilder: (context, state) => fadeTransitionPage(ProductsView()),
-      // ),
+      GoRoute(
+        path: Routes.home,
+        pageBuilder: (context, state) => fadeTransitionPage(HomeView()),
+      ),
       // GoRoute(
       //   path: Routes.productDetails,
       //   pageBuilder: (context, state) {

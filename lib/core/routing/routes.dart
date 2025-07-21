@@ -10,5 +10,5 @@ class Routes {
     return _instance;
   }
 
-  static const String home = '/onboarding';
+  static const String home = '/home_view';
 }

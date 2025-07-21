@@ -8,7 +8,7 @@ Container searchViewBackground() {
   return Container(
     decoration: BoxDecoration(
       gradient: LinearGradient(
-        colors: [ColorsTheme().primaryColor, ColorsTheme().accentColor],
+        colors: [ColorsTheme().primaryColor, ColorsTheme().primaryLight],
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
       ),
