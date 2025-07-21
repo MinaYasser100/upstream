@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upstream/core/theme/app_style.dart';
 import 'package:upstream/core/utils/colors.dart';
+import 'package:upstream/core/utils/cusotm_background.dart';
 
 class ConferenceSloganView extends StatefulWidget {
   const ConferenceSloganView({super.key});
@@ -79,16 +80,7 @@ class _ConferenceSloganViewState extends State<ConferenceSloganView>
         titleTextStyle: AppTextStyles.styleBold20sp(context),
         elevation: 4,
       ),
-      body: Container(
-        width: double.infinity, // التأكد إن الـ Container يغطي العرض كله
-        height: double.infinity, // التأكد إن الـ Container يغطي الطول كله
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [ColorsTheme().gradientStart, ColorsTheme().gradientEnd],
-          ),
-        ),
+      body: CustomBackground(
         child: Padding(
           padding: const EdgeInsets.only(top: 20),
           child: Column(
@@ -122,7 +114,7 @@ class _ConferenceSloganViewState extends State<ConferenceSloganView>
                               textDirection: TextDirection.rtl,
                             ),
                           );
-                        }).toList(),
+                        }),
                         // البيت الحالي اللي بيتكتب
                         if (currentVerseIndex < sloganVerses.length)
                           Padding(

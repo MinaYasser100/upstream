@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upstream/core/theme/app_style.dart';
 import 'package:upstream/core/utils/colors.dart';
 
-class BookStudyTitleView extends StatelessWidget {
-  const BookStudyTitleView({super.key});
-
+class CustomTitleView extends StatelessWidget {
+  const CustomTitleView({super.key, required this.title});
+  final String title;
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
@@ -20,7 +20,7 @@ class BookStudyTitleView extends StatelessWidget {
         child: AnimatedTextKit(
           animatedTexts: [
             TypewriterAnimatedText(
-              'دراسات الكتاب',
+              title,
               textStyle: AppTextStyles.styleBold32sp(context).copyWith(
                 color: ColorsTheme().whiteColor,
                 shadows: [

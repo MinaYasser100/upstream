@@ -13,4 +13,7 @@ class Routes {
   static const String home = '/home_view';
   static const String conferenceSlogan = '/conference_slogan_view';
   static const String bookStudy = '/book_study_view';
+  static const String conference = '/conference_view';
+  static const String saintMoses = '/saint_moses_view';
+  static const String successQuotes = '/success_quotes_view';
 }

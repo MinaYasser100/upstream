@@ -87,13 +87,10 @@ class HomeDrawerView extends StatelessWidget {
             ),
             buildDrawerItem(
               context,
-              icon: Icons.settings,
-              title: 'الإعدادات',
+              icon: Icons.event,
+              title: 'مؤتمرنا',
               onTap: () {
-                Navigator.pop(context);
-                ScaffoldMessenger.of(
-                  context,
-                ).showSnackBar(const SnackBar(content: Text('الإعدادات')));
+                context.push(Routes.conference);
               },
             ),
           ],

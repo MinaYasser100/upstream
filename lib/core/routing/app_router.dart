@@ -1,6 +1,9 @@
 import 'package:go_router/go_router.dart';
 import 'package:upstream/core/routing/routes.dart';
 import 'package:upstream/features/book/ui/book_study_view.dart';
+import 'package:upstream/features/conference/ui/conference_view.dart';
+import 'package:upstream/features/conference/ui/widgets/saint_moses_view.dart';
+import 'package:upstream/features/conference/ui/widgets/success_quotes_view.dart';
 import 'package:upstream/features/home/ui/home_view.dart';
 import 'package:upstream/features/home/ui/widgets/conference_slogan_view.dart';
 
@@ -22,6 +25,19 @@ abstract class AppRouter {
       GoRoute(
         path: Routes.bookStudy,
         pageBuilder: (context, state) => fadeTransitionPage(BookStudyView()),
+      ),
+      GoRoute(
+        path: Routes.conference,
+        pageBuilder: (context, state) => fadeTransitionPage(ConferenceView()),
+      ),
+      GoRoute(
+        path: Routes.saintMoses,
+        pageBuilder: (context, state) => fadeTransitionPage(SaintMosesView()),
+      ),
+      GoRoute(
+        path: Routes.successQuotes,
+        pageBuilder: (context, state) =>
+            fadeTransitionPage(SuccessQuotesView()),
       ),
       // GoRoute(
       //   path: Routes.productDetails,
