@@ -32,7 +32,11 @@ class ConferenceBodyView extends StatelessWidget {
       'icon': Icons.lightbulb,
       'route': Routes.thinkWithUs,
     },
-    {'title': 'مطلوب للعمل بأجور مجزية', 'icon': Icons.work},
+    {
+      'title': 'مطلوب للعمل بأجور مجزية',
+      'icon': Icons.work,
+      'route': Routes.jobOpportunities,
+    },
     {'title': 'صَوْتُ الرَّبِّ يُطفَيُ لُهُبَ نَارٍ', 'icon': Icons.flare},
     {'title': 'أقوال آباء', 'icon': Icons.book},
   ];
@@ -45,7 +49,6 @@ class ConferenceBodyView extends StatelessWidget {
           physics: const AlwaysScrollableScrollPhysics(),
           slivers: [
             CustomTitleView(title: 'مؤتمرنا'),
-            // قائمة الأزرار
             SliverList(
               delegate: SliverChildBuilderDelegate((context, index) {
                 final button = buttons[index];
@@ -131,7 +134,6 @@ class ConferenceBodyView extends StatelessWidget {
     );
   }
 }
-        // '/think_with_us': (context) => const Placeholder(), // استبدل بصفحة فكر معانا
         // '/job_opportunities': (context) => const Placeholder(), // استبدل بصفحة مطلوب للعمل
         // '/voice_of_lord': (context) => const Placeholder(), // استبدل بصفحة صوت الرب
         // '/fathers_sayings': (context) => const Placeholder(), // استبدل بصفحة أقوال آباء

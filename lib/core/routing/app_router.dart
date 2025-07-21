@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:upstream/core/routing/routes.dart';
 import 'package:upstream/features/book/ui/book_study_view.dart';
 import 'package:upstream/features/conference/ui/conference_view.dart';
+import 'package:upstream/features/conference/ui/widgets/job_opportunities_view.dart';
 import 'package:upstream/features/conference/ui/widgets/saint_moses_view.dart';
 import 'package:upstream/features/conference/ui/widgets/spiritual_prescription_view.dart';
 import 'package:upstream/features/conference/ui/widgets/steps_view.dart';
@@ -54,6 +55,11 @@ abstract class AppRouter {
       GoRoute(
         path: Routes.thinkWithUs,
         pageBuilder: (context, state) => fadeTransitionPage(ThinkWithUsView()),
+      ),
+      GoRoute(
+        path: Routes.jobOpportunities,
+        pageBuilder: (context, state) =>
+            fadeTransitionPage(JobOpportunitiesView()),
       ),
       // GoRoute(
       //   path: Routes.productDetails,
