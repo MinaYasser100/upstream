@@ -42,7 +42,7 @@ class ConferenceBodyView extends StatelessWidget {
       'icon': Icons.flare,
       'route': Routes.voiceOfLord,
     },
-    {'title': 'أقوال آباء', 'icon': Icons.book},
+    {'title': 'أقوال آباء', 'icon': Icons.book, 'route': Routes.fathersSaying},
   ];
 
   @override
@@ -138,5 +138,3 @@ class ConferenceBodyView extends StatelessWidget {
     );
   }
 }
-        // '/voice_of_lord': (context) => const Placeholder(), // استبدل بصفحة صوت الرب
-        // '/fathers_sayings': (context) => const Placeholder(), // استبدل بصفحة أقوال آباء
