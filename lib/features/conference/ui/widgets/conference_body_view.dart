@@ -21,7 +21,7 @@ class ConferenceBodyView extends StatelessWidget {
       'icon': Icons.format_quote,
       'route': Routes.successQuotes,
     },
-    {'title': 'الخطوات', 'icon': Icons.directions_walk},
+    {'title': 'الخطوات', 'icon': Icons.directions_walk, 'route': Routes.steps},
     {'title': 'روشتة روحية', 'icon': Icons.healing},
     {'title': 'فكر معانا', 'icon': Icons.lightbulb},
     {'title': 'مطلوب للعمل بأجور مجزية', 'icon': Icons.work},
@@ -123,3 +123,9 @@ class ConferenceBodyView extends StatelessWidget {
     );
   }
 }
+        // '/steps': (context) => const Placeholder(), // استبدل بصفحة الخطوات
+        // '/spiritual_prescription': (context) => const Placeholder(), // استبدل بصفحة روشتة روحية
+        // '/think_with_us': (context) => const Placeholder(), // استبدل بصفحة فكر معانا
+        // '/job_opportunities': (context) => const Placeholder(), // استبدل بصفحة مطلوب للعمل
+        // '/voice_of_lord': (context) => const Placeholder(), // استبدل بصفحة صوت الرب
+        // '/fathers_sayings': (context) => const Placeholder(), // استبدل بصفحة أقوال آباء

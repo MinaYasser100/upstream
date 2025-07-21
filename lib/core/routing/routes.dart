@@ -16,4 +16,5 @@ class Routes {
   static const String conference = '/conference_view';
   static const String saintMoses = '/saint_moses_view';
   static const String successQuotes = '/success_quotes_view';
+  static const String steps = '/steps_view';
 }
