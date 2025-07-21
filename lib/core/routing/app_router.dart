@@ -8,6 +8,7 @@ import 'package:upstream/features/conference/ui/widgets/spiritual_prescription_v
 import 'package:upstream/features/conference/ui/widgets/steps_view.dart';
 import 'package:upstream/features/conference/ui/widgets/success_quotes_view.dart';
 import 'package:upstream/features/conference/ui/widgets/think_with_us_view.dart';
+import 'package:upstream/features/conference/ui/widgets/voice_of_lord_view.dart';
 import 'package:upstream/features/home/ui/home_view.dart';
 import 'package:upstream/features/home/ui/widgets/conference_slogan_view.dart';
 
@@ -60,6 +61,10 @@ abstract class AppRouter {
         path: Routes.jobOpportunities,
         pageBuilder: (context, state) =>
             fadeTransitionPage(JobOpportunitiesView()),
+      ),
+      GoRoute(
+        path: Routes.voiceOfLord,
+        pageBuilder: (context, state) => fadeTransitionPage(VoiceOfLordView()),
       ),
       // GoRoute(
       //   path: Routes.productDetails,

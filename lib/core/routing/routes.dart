@@ -20,4 +20,5 @@ class Routes {
   static const String spiritualPrescription = '/spiritual_prescription_view';
   static const String thinkWithUs = '/think_with_us_view';
   static const String jobOpportunities = '/job_opportunities_view';
+  static const String voiceOfLord = '/voice_of_lord_view';
 }

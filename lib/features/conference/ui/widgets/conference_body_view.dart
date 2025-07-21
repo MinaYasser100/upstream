@@ -37,7 +37,11 @@ class ConferenceBodyView extends StatelessWidget {
       'icon': Icons.work,
       'route': Routes.jobOpportunities,
     },
-    {'title': 'صَوْتُ الرَّبِّ يُطفَيُ لُهُبَ نَارٍ', 'icon': Icons.flare},
+    {
+      'title': 'صَوْتُ الرَّبِّ يُطفَيُ لُهُبَ نَارٍ',
+      'icon': Icons.flare,
+      'route': Routes.voiceOfLord,
+    },
     {'title': 'أقوال آباء', 'icon': Icons.book},
   ];
 
@@ -134,6 +138,5 @@ class ConferenceBodyView extends StatelessWidget {
     );
   }
 }
-        // '/job_opportunities': (context) => const Placeholder(), // استبدل بصفحة مطلوب للعمل
         // '/voice_of_lord': (context) => const Placeholder(), // استبدل بصفحة صوت الرب
         // '/fathers_sayings': (context) => const Placeholder(), // استبدل بصفحة أقوال آباء
