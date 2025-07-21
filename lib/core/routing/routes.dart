@@ -17,4 +17,5 @@ class Routes {
   static const String saintMoses = '/saint_moses_view';
   static const String successQuotes = '/success_quotes_view';
   static const String steps = '/steps_view';
+  static const String spiritualPrescription = '/spiritual_prescription_view';
 }

@@ -3,6 +3,7 @@ import 'package:upstream/core/routing/routes.dart';
 import 'package:upstream/features/book/ui/book_study_view.dart';
 import 'package:upstream/features/conference/ui/conference_view.dart';
 import 'package:upstream/features/conference/ui/widgets/saint_moses_view.dart';
+import 'package:upstream/features/conference/ui/widgets/spiritual_prescription_view.dart';
 import 'package:upstream/features/conference/ui/widgets/steps_view.dart';
 import 'package:upstream/features/conference/ui/widgets/success_quotes_view.dart';
 import 'package:upstream/features/home/ui/home_view.dart';
@@ -43,6 +44,11 @@ abstract class AppRouter {
       GoRoute(
         path: Routes.steps,
         pageBuilder: (context, state) => fadeTransitionPage(StepsView()),
+      ),
+      GoRoute(
+        path: Routes.spiritualPrescription,
+        pageBuilder: (context, state) =>
+            fadeTransitionPage(SpiritualPrescriptionView()),
       ),
       // GoRoute(
       //   path: Routes.productDetails,
