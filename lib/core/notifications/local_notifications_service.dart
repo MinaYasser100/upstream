@@ -78,11 +78,9 @@ class LocalNotificationService {
       try {
         // Request notification permission
         final notificationStatus = await Permission.notification.request();
-        print('Notification permission: ${notificationStatus.isGranted}');
 
         // Request exact alarm permission (Android 12+)
         final alarmStatus = await Permission.scheduleExactAlarm.request();
-        print('Exact alarm permission: ${alarmStatus.isGranted}');
 
         // Request to ignore battery optimizations
         final batteryStatus = await Permission.ignoreBatteryOptimizations
@@ -91,7 +89,6 @@ class LocalNotificationService {
 
         return notificationStatus.isGranted && alarmStatus.isGranted;
       } catch (e) {
-        print('Error requesting Android permissions: $e');
         return false;
       }
     } else if (Platform.isIOS) {
@@ -154,7 +151,6 @@ class LocalNotificationService {
         // إذا كان اليوم الأول والوقت فات 8 صباحاً، جدول للغد
         if (i == 0 && now.isAfter(scheduledTime)) {
           scheduledTime = scheduledTime.add(const Duration(days: 1));
-          print('Today\'s 8 AM has passed, scheduling for tomorrow');
           continue;
         }
 
@@ -326,7 +322,6 @@ class LocalNotificationService {
     try {
       final pending = await _flutterLocalNotificationsPlugin
           .pendingNotificationRequests();
-      print('📅 Pending notifications count: ${pending.length}');
       for (var notification in pending) {
         print(
           '📋 Pending: ID ${notification.id}, Title: ${notification.title}',
