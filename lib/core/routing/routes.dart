@@ -24,4 +24,5 @@ class Routes {
   static const String fathersSaying = '/fathers_saying_view';
   static const String hymns = '/hymns_view';
   static const String hymn = '/hymn_view';
+  static const String bookStudyContent = '/book_study_content';
 }

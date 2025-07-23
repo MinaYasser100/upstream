@@ -5,8 +5,7 @@ import 'package:upstream/core/utils/cusotm_background.dart';
 import 'package:upstream/core/utils/custom_divider.dart';
 import 'package:upstream/core/utils/custom_title_view.dart';
 import 'package:upstream/features/book/data/book_study_data.dart';
-
-import 'book_study_item_view.dart';
+import 'package:upstream/features/book/ui/widgets/book_study_list_item.dart';
 
 class BookStudyBodyView extends StatelessWidget {
   const BookStudyBodyView({super.key});
@@ -25,7 +24,11 @@ class BookStudyBodyView extends StatelessWidget {
               SliverList(
                 delegate: SliverChildBuilderDelegate((context, index) {
                   final study = BookStudyData.studies[index];
-                  return BookStudyItemView(study: study, index: index);
+                  return BookStudyListItem(
+                    colors: ColorsTheme(),
+                    study: study,
+                    index: index,
+                  );
                 }, childCount: BookStudyData.studies.length),
               ),
               // فاصل أسفل القائمة

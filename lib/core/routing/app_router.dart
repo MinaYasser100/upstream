@@ -1,6 +1,8 @@
 import 'package:go_router/go_router.dart';
 import 'package:upstream/core/routing/routes.dart';
+import 'package:upstream/features/book/data/model/study_model.dart';
 import 'package:upstream/features/book/ui/book_study_view.dart';
+import 'package:upstream/features/book/ui/widgets/book_study_content.dart';
 import 'package:upstream/features/conference/ui/conference_view.dart';
 import 'package:upstream/features/conference/ui/widgets/fathers_sayings_view.dart';
 import 'package:upstream/features/conference/ui/widgets/job_opportunities_view.dart';
@@ -85,6 +87,14 @@ abstract class AppRouter {
           final hymn = state.extra as HymnModel?;
           if (hymn == null) throw Exception('Hymn not found');
           return fadeTransitionPage(HymnView(hymn: hymn));
+        },
+      ),
+      GoRoute(
+        path: Routes.bookStudyContent,
+        pageBuilder: (context, state) {
+          final study = state.extra as Study?;
+          if (study == null) throw Exception('Hymn not found');
+          return fadeTransitionPage(BookStudyContent(study: study));
         },
       ),
       // GoRoute(
