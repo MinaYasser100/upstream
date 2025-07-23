@@ -3,52 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:go_router/go_router.dart';
-import 'package:upstream/core/routing/routes.dart';
 import 'package:upstream/core/theme/app_style.dart';
 import 'package:upstream/core/utils/colors.dart';
 import 'package:upstream/core/utils/cusotm_background.dart';
 import 'package:upstream/core/utils/custom_divider.dart';
 import 'package:upstream/core/utils/custom_title_view.dart';
+import 'package:upstream/features/conference/data/conference_model.dart';
+import 'package:upstream/features/home/ui/widgets/by_widget.dart';
 
 class ConferenceBodyView extends StatelessWidget {
   const ConferenceBodyView({super.key});
-
-  // قائمة الأزرار مع الأيقونات المرتبطة
-  static const List<Map<String, dynamic>> buttons = [
-    {'title': 'شفيع المؤتمر', 'icon': Icons.star, 'route': Routes.saintMoses},
-    {
-      'title': 'قالوا عن النجاح',
-      'icon': Icons.format_quote,
-      'route': Routes.successQuotes,
-    },
-    {'title': 'الخطوات', 'icon': Icons.directions_walk, 'route': Routes.steps},
-    {
-      'title': 'روشتة روحية',
-      'icon': Icons.healing,
-      'route': Routes.spiritualPrescription,
-    },
-    {
-      'title': 'فكر معانا',
-      'icon': Icons.lightbulb,
-      'route': Routes.thinkWithUs,
-    },
-    {
-      'title': 'مطلوب للعمل بأجور مجزية',
-      'icon': Icons.work,
-      'route': Routes.jobOpportunities,
-    },
-    {
-      'title': 'صَوْتُ الرَّبِّ يُطفَيُ لُهُبَ نَارٍ',
-      'icon': Icons.flare,
-      'route': Routes.voiceOfLord,
-    },
-    {'title': 'أقوال آباء', 'icon': Icons.book, 'route': Routes.fathersSaying},
-    {
-      "title": 'ترانيم',
-      "icon": Icons.music_note_outlined,
-      "route": Routes.hymns,
-    },
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +61,7 @@ class ConferenceBodyView extends StatelessWidget {
                             color: Colors.transparent,
                             child: GestureDetector(
                               onTap: () {
-                                context.push(button['route'] as String);
+                                context.push(button.route);
                               },
                               child: Padding(
                                 padding: EdgeInsets.all(20.w),
@@ -105,14 +69,14 @@ class ConferenceBodyView extends StatelessWidget {
                                   textDirection: TextDirection.rtl,
                                   children: [
                                     Icon(
-                                      button['icon'] as IconData,
+                                      button.icon,
                                       color: ColorsTheme().accentColor,
                                       size: 24.sp,
                                     ),
                                     SizedBox(width: 12.w),
                                     Expanded(
                                       child: Text(
-                                        button['title'] as String,
+                                        button.title,
                                         style:
                                             AppTextStyles.styleBold20sp(
                                               context,
@@ -137,6 +101,7 @@ class ConferenceBodyView extends StatelessWidget {
             ),
             // فاصل أسفل القائمة
             CustomDivider(),
+            ByWidget(),
           ],
         ),
       ),
