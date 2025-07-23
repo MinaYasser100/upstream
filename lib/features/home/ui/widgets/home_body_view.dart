@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upstream/core/theme/app_style.dart';
@@ -41,73 +42,86 @@ class HomeBodyView extends StatelessWidget {
           colors: [ColorsTheme().gradientStart, ColorsTheme().gradientEnd],
         ),
       ),
-      child: CustomScrollView(
-        slivers: [
-          HomeTitleView(),
-          SliverList(
-            delegate: SliverChildBuilderDelegate((context, index) {
-              final item = schedule[index];
-              return Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-                child: Card(
-                  elevation: 6,
-                  shadowColor: ColorsTheme().primaryDark.withValues(alpha: 0.2),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16.r),
+      child: RawScrollbar(
+        thumbColor: ColorsTheme().whiteColor,
+        radius: Radius.circular(5.r),
+        child: CustomScrollView(
+          slivers: [
+            HomeTitleView(),
+            SliverList(
+              delegate: SliverChildBuilderDelegate((context, index) {
+                final item = schedule[index];
+                return Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 8.h,
                   ),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          ColorsTheme().cardColor,
-                          ColorsTheme().eventHighlightColor,
-                        ],
+                  child: FadeInRight(
+                    child: Card(
+                      elevation: 6,
+                      shadowColor: ColorsTheme().primaryDark.withValues(
+                        alpha: 0.2,
                       ),
-                      borderRadius: BorderRadius.circular(16.r),
-                    ),
-                    child: ListTile(
-                      contentPadding: EdgeInsets.symmetric(
-                        horizontal: 16.w,
-                        vertical: 12.h,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.r),
                       ),
-                      leading: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 3),
-                            child: Icon(
-                              _getIconForEvent(item['event']!),
-                              color: ColorsTheme().primaryColor,
-                              size: 24.sp,
-                            ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              ColorsTheme().cardColor,
+                              ColorsTheme().eventHighlightColor,
+                            ],
                           ),
-                          SizedBox(width: 8.w),
-                          Text(
-                            item['time']!,
-                            style: AppTextStyles.styleBold16sp(
+                          borderRadius: BorderRadius.circular(16.r),
+                        ),
+                        child: ListTile(
+                          contentPadding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: 12.h,
+                          ),
+                          leading: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 3,
+                                ),
+                                child: Icon(
+                                  _getIconForEvent(item['event']!),
+                                  color: ColorsTheme().primaryColor,
+                                  size: 24.sp,
+                                ),
+                              ),
+                              SizedBox(width: 8.w),
+                              Text(
+                                item['time']!,
+                                style: AppTextStyles.styleBold16sp(
+                                  context,
+                                ).copyWith(color: ColorsTheme().textColor),
+                                textDirection: TextDirection.rtl,
+                              ),
+                            ],
+                          ),
+                          title: Text(
+                            item['event']!,
+                            style: AppTextStyles.styleBold18sp(
                               context,
                             ).copyWith(color: ColorsTheme().textColor),
                             textDirection: TextDirection.rtl,
                           ),
-                        ],
-                      ),
-                      title: Text(
-                        item['event']!,
-                        style: AppTextStyles.styleBold18sp(
-                          context,
-                        ).copyWith(color: ColorsTheme().textColor),
-                        textDirection: TextDirection.rtl,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              );
-            }, childCount: schedule.length),
-          ),
-          ByWidget(),
-        ],
+                );
+              }, childCount: schedule.length),
+            ),
+            ByWidget(),
+          ],
+        ),
       ),
     );
   }

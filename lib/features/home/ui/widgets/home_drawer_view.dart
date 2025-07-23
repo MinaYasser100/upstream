@@ -13,36 +13,63 @@ class HomeDrawerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      elevation: 0,
+      backgroundColor: Colors.transparent,
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [ColorsTheme().gradientStart, ColorsTheme().gradientEnd],
+            colors: [
+              ColorsTheme().gradientStart.withValues(alpha: 0.95),
+              ColorsTheme().gradientEnd.withValues(alpha: 0.95),
+            ],
+            stops: const [0.0, 1.0],
           ),
+          borderRadius: const BorderRadius.horizontal(
+            right: Radius.circular(16),
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: ColorsTheme().primaryDark.withValues(alpha: 0.3),
+              blurRadius: 12,
+              spreadRadius: 2,
+              offset: const Offset(-4, 0),
+            ),
+          ],
         ),
         child: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
           slivers: [
             SliverToBoxAdapter(
               child: DrawerHeader(
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
                 decoration: BoxDecoration(
-                  image: const DecorationImage(
-                    image: AssetImage('assets/images/logo.jpeg'),
+                  image: DecorationImage(
+                    image: const AssetImage('assets/images/logo.jpeg'),
                     fit: BoxFit.cover,
+                    colorFilter: ColorFilter.mode(
+                      ColorsTheme().primaryDark.withValues(alpha: 0.2),
+                      BlendMode.darken,
+                    ),
                   ),
                 ),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'مؤتمر Upstream',
                       style: AppTextStyles.styleBold28sp(context).copyWith(
                         color: ColorsTheme().whiteColor,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: 1.2,
                         shadows: [
                           Shadow(
-                            color: ColorsTheme().primaryDark.withOpacity(0.5),
-                            blurRadius: 4,
+                            color: ColorsTheme().primaryDark.withValues(
+                              alpha: 0.6,
+                            ),
+                            blurRadius: 6,
                             offset: const Offset(2, 2),
                           ),
                         ],
@@ -51,9 +78,10 @@ class HomeDrawerView extends StatelessWidget {
                     ),
                     SizedBox(height: 8.h),
                     Text(
-                      'َضد التيار',
+                      'ضد التيار',
                       style: AppTextStyles.styleRegular20sp(context).copyWith(
-                        color: ColorsTheme().whiteColor.withValues(alpha: 0.8),
+                        color: ColorsTheme().whiteColor.withValues(alpha: 0.9),
+                        letterSpacing: 0.8,
                       ),
                       textDirection: TextDirection.rtl,
                     ),
@@ -63,7 +91,7 @@ class HomeDrawerView extends StatelessWidget {
             ),
             SliverList(
               delegate: SliverChildListDelegate([
-                buildDrawerItem(
+                buildAnimatedDrawerItem(
                   context,
                   icon: Icons.schedule,
                   title: 'جدول المؤتمر',
@@ -71,7 +99,7 @@ class HomeDrawerView extends StatelessWidget {
                     Navigator.pop(context);
                   },
                 ),
-                buildDrawerItem(
+                buildAnimatedDrawerItem(
                   context,
                   icon: Icons.music_note,
                   title: 'شعار المؤتمر',
@@ -79,7 +107,7 @@ class HomeDrawerView extends StatelessWidget {
                     context.push(Routes.conferenceSlogan);
                   },
                 ),
-                buildDrawerItem(
+                buildAnimatedDrawerItem(
                   context,
                   icon: Icons.contact_mail,
                   title: 'دراسة كتاب',
@@ -87,7 +115,7 @@ class HomeDrawerView extends StatelessWidget {
                     context.push(Routes.bookStudy);
                   },
                 ),
-                buildDrawerItem(
+                buildAnimatedDrawerItem(
                   context,
                   icon: Icons.event,
                   title: 'مؤتمرنا',
