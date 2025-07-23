@@ -4,6 +4,7 @@ import 'package:upstream/core/theme/app_style.dart';
 import 'package:upstream/core/utils/colors.dart';
 import 'package:upstream/features/home/data/appointment_data.dart';
 
+import 'by_widget.dart';
 import 'home_title_view.dart';
 
 class HomeBodyView extends StatelessWidget {
@@ -105,6 +106,7 @@ class HomeBodyView extends StatelessWidget {
               );
             }, childCount: schedule.length),
           ),
+          ByWidget(),
         ],
       ),
     );
