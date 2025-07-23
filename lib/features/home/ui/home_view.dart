@@ -20,7 +20,7 @@ class HomeView extends StatelessWidget {
         elevation: 4,
         shadowColor: ColorsTheme().primaryDark.withValues(alpha: 0.3),
       ),
-      drawer: HomeDrawerView(),
+      endDrawer: HomeDrawerView(),
       body: const HomeBodyView(),
     );
   }

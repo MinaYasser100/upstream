@@ -67,14 +67,7 @@ class HomeBodyView extends StatelessWidget {
                       ),
                       child: Container(
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            colors: [
-                              ColorsTheme().cardColor,
-                              ColorsTheme().eventHighlightColor,
-                            ],
-                          ),
+                          color: ColorsTheme().cardColor,
                           borderRadius: BorderRadius.circular(16.r),
                         ),
                         child: ListTile(
@@ -90,14 +83,14 @@ class HomeBodyView extends StatelessWidget {
                                   horizontal: 3,
                                 ),
                                 child: Icon(
-                                  _getIconForEvent(item['event']!),
+                                  _getIconForEvent(item.event),
                                   color: ColorsTheme().primaryColor,
                                   size: 24.sp,
                                 ),
                               ),
                               SizedBox(width: 8.w),
                               Text(
-                                item['time']!,
+                                item.time,
                                 style: AppTextStyles.styleBold16sp(
                                   context,
                                 ).copyWith(color: ColorsTheme().textColor),
@@ -106,7 +99,7 @@ class HomeBodyView extends StatelessWidget {
                             ],
                           ),
                           title: Text(
-                            item['event']!,
+                            item.event,
                             style: AppTextStyles.styleBold18sp(
                               context,
                             ).copyWith(color: ColorsTheme().textColor),
